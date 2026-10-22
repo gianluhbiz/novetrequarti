@@ -108,6 +108,18 @@ export default function UltimaCorsa({ onMenu = false }: { onMenu?: boolean }) {
         <div className="mt-16 flex flex-col justify-between gap-3 border-t border-cream/10 pt-6 font-mono text-[11px] text-cream/40 sm:flex-row">
           <p>© {new Date().getFullYear()} Caffè Novetrequarti · Nuoro</p>
           <p>Foto: profili social del locale e ospiti su Tripadvisor</p>
+          <p>
+            Developed and Designed by{' '}
+            <a
+              href="https://gianluh.dev"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 font-bold text-cream/80 underline underline-offset-4 transition-colors duration-200 hover:text-amber"
+            >
+              Gianluca De Maio
+              <i className="ri-external-link-line" aria-hidden />
+            </a>
+          </p>
         </div>
       </div>
     </footer>
