@@ -1,7 +1,7 @@
 import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { lines, stations } from '../data/site'
-import { EASE_IN_OUT, EASE_OUT, euro } from '../lib/motion'
+import { EASE_IN_OUT, EASE_OUT, winePrice } from '../lib/motion'
 
 /** Sardinian wines on the list, drawn as a metro map with Nuoro as the hub. */
 export default function WineMap() {
@@ -44,7 +44,7 @@ export default function WineMap() {
                     </div>
                     <span className="flex-1 translate-y-[-4px] border-b border-dotted border-ink/25" />
                     <p className="shrink-0 font-mono text-sm tabular-nums">
-                      {w.prices.length === 2 ? `${euro(w.prices[0])} · ${euro(w.prices[1])}` : w.prices[0] >= 15 ? `bott. ${euro(w.prices[0])}` : `calice ${euro(w.prices[0])}`}
+                      {winePrice(w.prices)}
                     </p>
                   </li>
                 ))}

@@ -8,3 +8,7 @@ export const canHover = () =>
 
 export const euro = (n: number) =>
   n.toLocaleString('it-IT', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 }) + ' €'
+
+/** Wine list price: glass · bottle, or just one of them. */
+export const winePrice = (p: number[]) =>
+  p.length === 2 ? `${euro(p[0])} · ${euro(p[1])}` : p[0] >= 15 ? `bott. ${euro(p[0])}` : `calice ${euro(p[0])}`

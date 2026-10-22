@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import GinWall from '../components/GinWall'
 import WineMap from '../components/WineMap'
+import WineRoute from '../components/WineRoute'
 import { img, signatures } from '../data/site'
 import { EASE_OUT } from '../lib/motion'
 
@@ -41,7 +42,12 @@ export default function Sera() {
         </div>
 
         <div className="mt-28 border-t border-cream/10 pt-20">
-          <WineMap />
+          <div className="hidden lg:block">
+            <WineMap />
+          </div>
+          <div className="lg:hidden">
+            <WineRoute />
+          </div>
         </div>
 
         <div className="mt-28 border-t border-cream/10 pt-20">

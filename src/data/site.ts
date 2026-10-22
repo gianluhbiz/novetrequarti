@@ -61,27 +61,27 @@ export const reviews: Review[] = [
 ]
 
 export type Wine = { name: string; detail: string; prices: number[] }
-export type Station = { id: string; name: string; x: number; y: number; wines: Wine[]; labelSide?: 'left' | 'right' }
+export type Station = { id: string; name: string; x: number; y: number; wines: Wine[]; labelSide?: 'left' | 'right'; km?: number; line?: string }
 
 // Schematic map, not to scale. viewBox 0 0 360 520.
 export const stations: Station[] = [
   { id: 'nuoro', name: 'Nuoro', x: 218, y: 214, wines: [] },
-  { id: 'mamoiada', name: 'Mamoiada', x: 196, y: 262, labelSide: 'left', wines: [
+  { id: 'mamoiada', name: 'Mamoiada', x: 196, y: 262, km: 18, line: 'barbagia', labelSide: 'left', wines: [
     { name: 'Sartiu', detail: 'Cannonau · Giuseppe Sedilesu', prices: [4, 20] },
     { name: 'Mertzeoro', detail: 'Cannonau', prices: [4, 22] },
     { name: 'Zispanu', detail: 'Giuseppe Sedilesu', prices: [40] },
     { name: 'Carnevale', detail: 'Giuseppe Sedilesu', prices: [45] },
     { name: 'Mertzeoro Granatza', detail: 'Bianco', prices: [4] },
   ] },
-  { id: 'orgosolo', name: 'Orgosolo', x: 228, y: 306, wines: [{ name: 'Locoe', detail: 'Cannonau · Cantina Orgosolo', prices: [4, 20] }] },
-  { id: 'dorgali', name: 'Dorgali', x: 290, y: 198, wines: [
+  { id: 'orgosolo', name: 'Orgosolo', x: 228, y: 306, km: 20, line: 'barbagia', wines: [{ name: 'Locoe', detail: 'Cannonau · Cantina Orgosolo', prices: [4, 20] }] },
+  { id: 'dorgali', name: 'Dorgali', x: 290, y: 198, km: 32, line: 'barbagia', wines: [
     { name: 'Thurcalesu', detail: 'Cannonau · Berritta', prices: [4, 22] },
     { name: 'Filine', detail: 'Vermentino · Cantina Dorgali', prices: [3.5, 18] },
   ] },
-  { id: 'arzachena', name: 'Arzachena', x: 262, y: 52, wines: [{ name: 'Branu', detail: 'Vermentino di Gallura · Surrau', prices: [4, 20] }] },
-  { id: 'luogosanto', name: 'Luogosanto', x: 208, y: 70, labelSide: 'left', wines: [{ name: 'Spera', detail: 'Vermentino di Gallura · Siddura', prices: [4, 22] }] },
-  { id: 'asinara', name: 'Asinara', x: 58, y: 40, wines: [{ name: 'Indolente', detail: 'Vermentino · Tenute Asinara', prices: [4] }] },
-  { id: 'alghero', name: 'Alghero', x: 62, y: 168, wines: [
+  { id: 'arzachena', name: 'Arzachena', x: 262, y: 52, km: 125, line: 'gallura', wines: [{ name: 'Branu', detail: 'Vermentino di Gallura · Surrau', prices: [4, 20] }] },
+  { id: 'luogosanto', name: 'Luogosanto', x: 208, y: 70, km: 130, line: 'gallura', labelSide: 'left', wines: [{ name: 'Spera', detail: 'Vermentino di Gallura · Siddura', prices: [4, 22] }] },
+  { id: 'asinara', name: 'Asinara', x: 58, y: 40, km: 165, line: 'ovest', wines: [{ name: 'Indolente', detail: 'Vermentino · Tenute Asinara', prices: [4] }] },
+  { id: 'alghero', name: 'Alghero', x: 62, y: 168, km: 140, line: 'ovest', wines: [
     { name: 'Medeus', detail: 'Cannonau · Sella & Mosca', prices: [3.5, 18] },
     { name: 'Cagnulari', detail: 'Santa Maria La Palma', prices: [4, 20] },
     { name: 'Cala Reale', detail: 'Vermentino · Sella & Mosca', prices: [4, 20] },
@@ -90,14 +90,14 @@ export const stations: Station[] = [
     { name: 'Akenta', detail: 'Spumante di Vermentino', prices: [4, 20] },
     { name: 'Anemone', detail: 'Rosato · Sella & Mosca', prices: [4, 22] },
   ] },
-  { id: 'sanluri', name: 'Sanluri', x: 128, y: 372, labelSide: 'left', wines: [{ name: 'Suditerra', detail: "Bovale · Su 'Entu", prices: [4, 20] }] },
-  { id: 'serdiana', name: 'Serdiana', x: 196, y: 430, wines: [
+  { id: 'sanluri', name: 'Sanluri', x: 128, y: 372, km: 135, line: 'sud', labelSide: 'left', wines: [{ name: 'Suditerra', detail: "Bovale · Su 'Entu", prices: [4, 20] }] },
+  { id: 'serdiana', name: 'Serdiana', x: 196, y: 430, km: 170, line: 'sud', wines: [
     { name: 'Carda Nera', detail: 'Carignano del Sulcis · Argiolas', prices: [4, 20] },
     { name: 'Korem', detail: 'Bovale · Argiolas', prices: [45] },
     { name: 'Iselis', detail: 'Nasco · Argiolas', prices: [4] },
   ] },
-  { id: 'santadi', name: 'Santadi', x: 104, y: 444, labelSide: 'left', wines: [{ name: 'Pedraia', detail: 'Nuragus · Santadi', prices: [4] }] },
-  { id: 'arresi', name: "Sant'Anna Arresi", x: 86, y: 492, labelSide: 'right', wines: [
+  { id: 'santadi', name: 'Santadi', x: 104, y: 444, km: 230, line: 'sud', labelSide: 'left', wines: [{ name: 'Pedraia', detail: 'Nuragus · Santadi', prices: [4] }] },
+  { id: 'arresi', name: "Sant'Anna Arresi", x: 86, y: 492, km: 250, line: 'sud', labelSide: 'right', wines: [
     { name: 'Buio', detail: 'Carignano del Sulcis · Mesa', prices: [4, 25] },
     { name: 'Brama', detail: 'Syrah · Mesa', prices: [4.5, 25] },
   ] },
